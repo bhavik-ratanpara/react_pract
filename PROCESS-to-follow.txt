@@ -1,0 +1,34 @@
+npm install -D prettier eslint-config-prettier eslint-plugin-prettier
+
+
+
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 80
+}
+
+
+
+node_modules
+dist
+coverage
+
+
+
+ "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+
+
+
+npm run lint
+npm run format
