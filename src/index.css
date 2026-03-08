@@ -15,7 +15,7 @@ a {
   color: inherit;
 }
 
-/* AUTH */
+/* ── AUTH PAGE ── */
 .auth-page {
   min-height: 100vh;
   display: flex;
@@ -45,28 +45,6 @@ a {
   gap: 10px;
 }
 
-.auth-box label {
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 2px;
-  display: block;
-}
-
-.auth-box input {
-  width: 100%;
-  padding: 10px 12px;
-  background: #111;
-  border: 1px solid #2a2a2a;
-  border-radius: 6px;
-  color: #e0e0e0;
-  font-size: 14px;
-  outline: none;
-}
-
-.auth-box input:focus {
-  border-color: #555;
-}
-
 .auth-box p {
   margin-top: 16px;
   font-size: 13px;
@@ -77,6 +55,52 @@ a {
   color: #a78bfa;
 }
 
+/* ── FORM INPUT (validation component) ── */
+.auth-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-form-input label {
+  font-size: 12px;
+  color: #888;
+}
+
+.auth-form-input input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.auth-form-input input:focus {
+  border-color: #555;
+}
+
+/* Error span — hidden by default */
+.auth-input-error {
+  font-size: 12px;
+  color: #f87171;
+  display: none;
+  padding: 2px 0;
+}
+
+/* Show red border + error message only after blur and when invalid */
+.auth-form-input input:invalid[data-focused="true"] {
+  border-color: #f87171;
+}
+
+.auth-form-input input:invalid[data-focused="true"] ~ .auth-input-error {
+  display: block;
+}
+
+/* ── ERROR BANNER (redux errors) ── */
 .error-msg {
   background: #2a1a1a;
   color: #f87171;
@@ -87,7 +111,7 @@ a {
   margin-bottom: 8px;
 }
 
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn-main {
   background: #7c3aed;
   color: #fff;
@@ -152,7 +176,7 @@ a {
 
 .btn-logout:hover { color: #f87171; border-color: #3a2020; }
 
-/* NAVBAR */
+/* ── NAVBAR ── */
 .navbar {
   display: flex;
   align-items: center;
@@ -198,7 +222,7 @@ a {
 
 .nav-email { font-size: 12px; color: #555; }
 
-/* PAGE */
+/* ── PAGE ── */
 .page {
   max-width: 940px;
   margin: 0 auto;
@@ -221,7 +245,7 @@ a {
 
 .page-head .btn-main { width: auto; margin-top: 0; }
 
-/* STATS */
+/* ── STATS ── */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -250,7 +274,7 @@ a {
 
 .stat-label { font-size: 12px; color: #555; }
 
-/* SECTION */
+/* ── DASHBOARD SECTION ── */
 .section {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
@@ -282,7 +306,7 @@ a {
 
 .list-row:hover { border-color: #444; }
 
-/* BADGES */
+/* ── BADGES ── */
 .badge {
   font-size: 11px;
   font-weight: 600;
@@ -295,7 +319,7 @@ a {
 .badge.purple { background: #1e1530; color: #a78bfa; }
 .badge.yellow { background: #1c1407; color: #fbbf24; }
 
-/* TOOLBAR */
+/* ── TOOLBAR ── */
 .toolbar {
   display: flex;
   gap: 10px;
@@ -332,7 +356,7 @@ a {
 .filter-btn:hover { color: #ddd; border-color: #444; }
 .filter-btn.selected { background: #7c3aed; border-color: #7c3aed; color: #fff; }
 
-/* CARDS */
+/* ── PROJECT CARDS ── */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -380,7 +404,7 @@ a {
 .due-date { font-size: 12px; color: #666; }
 .due-date.overdue { color: #f87171; }
 
-/* MODAL */
+/* ── MODAL ── */
 .overlay {
   position: fixed;
   inset: 0;
@@ -468,7 +492,7 @@ a {
 .modal-actions .btn-cancel,
 .modal-actions .btn-main { flex: 1; width: auto; }
 
-/* DETAIL */
+/* ── PROJECT DETAIL ── */
 .back-link {
   display: inline-block;
   font-size: 13px;
@@ -518,7 +542,7 @@ a {
 .detail-actions .btn-main,
 .detail-actions .btn-danger { width: auto; margin-top: 0; }
 
-/* MISC */
+/* ── MISC ── */
 .empty {
   text-align: center;
   color: #555;
@@ -529,12 +553,12 @@ a {
 .empty a { color: #a78bfa; }
 .overdue { color: #f87171; font-weight: 600; }
 
-/* RESPONSIVE */
+/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
-  .stats-row    { grid-template-columns: repeat(2, 1fr); }
-  .toolbar      { flex-direction: column; }
-  .filter-group { flex-wrap: wrap; }
-  .nav-email    { display: none; }
-  .form-row     { flex-direction: column; }
+  .stats-row      { grid-template-columns: repeat(2, 1fr); }
+  .toolbar        { flex-direction: column; }
+  .filter-group   { flex-wrap: wrap; }
+  .nav-email      { display: none; }
+  .form-row       { flex-direction: column; }
   .detail-actions { flex-direction: column; }
 }
