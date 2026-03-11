@@ -1,95 +1,71 @@
-import { useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { deleteProject, selectById } from '../features/projects/projectSlice'
 import Navbar from '../components/Navbar'
 import ProjectForm from '../components/ProjectForm'
 
 function ProjectDetail() {
-  const { id }   = useParams()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const project  = useSelector(selectById(id))
-  const [showEdit, setShowEdit] = useState(false)
+    const { id } = useParams()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const project = useSelector(selectById(id))
+    const [showEdit, setshowEdit] = useState(false)
 
-  if (!project) {
-    return (
-      <>
-        <Navbar />
-        <div className="page">
-          <p className="empty">Project not found.</p>
-          <Link to="/projects">← Back</Link>
-        </div>
-      </>
-    )
-  }
-
-  function handleDelete() {
-    if (window.confirm('Delete this project?')) {
-      dispatch(deleteProject(id))
-      navigate('/projects')
+    function handleDelete() {
+        if (window.confirm(`Delete this project?`)) {
+            dispatch(deleteProject(id))
+            navigate(`/projects`)
+        }
     }
-  }
+    const isOverdue = project.dueDate && project.status !== "Completed" && new Date(project.dueDate) < new Date()
 
-  const isOverdue =
-    project.dueDate &&
-    project.status !== 'Completed' &&
-    new Date(project.dueDate) < new Date()
 
-  const badgeClass = {
-    'Active':    'badge green',
-    'Completed': 'badge purple',
-    'On Hold':   'badge yellow',
-  }
+    return (
+        <>
+            <Navbar />
+            <div>
+                <Link to="/projects">← Back to Projects</Link>
 
-  return (
-    <>
-      <Navbar />
-      <div className="page">
-        <Link to="/projects" className="back-link">← Back to Projects</Link>
+                <div>
+                    <div>
+                        <h1>{project.title}</h1>
+                        <span >{project.status}</span>
+                    </div>
 
-        <div className="detail-box">
-          <div className="detail-top">
-            <h1>{project.title}</h1>
-            <span className={badgeClass[project.status]}>{project.status}</span>
-          </div>
-
-          {project.description && (
-            <div className="detail-field">
-              <p className="field-label">Description</p>
-              <p>{project.description}</p>
+                    {project.description && (
+                        <div>
+                            <p>Description:</p>
+                            <p>{project.description}</p>
+                        </div>
+                    )}
+                    {project.dueDate && (
+                        <div>
+                            <p>Due Date:</p>
+                            <p>
+                                {isOverdue && 'Overdue'}
+                                {new Date(project.dueDate).toLocaleDateString()}
+                            </p>
+                        </div>
+                    )}
+                    {project.createdAt && (
+                        <div>
+                            <p>Created:</p>
+                            <p>{new Date(project.createdAt).toLocaleDateString()}</p>
+                        </div>
+                    )}
+                    <div >
+                        <button onClick={() => setshowEdit(true)}>Edit</button>
+                        <button onClick={handleDelete}>Delete</button>
+                    </div>
+                </div>
             </div>
-          )}
+            {showEdit && (
+                <ProjectForm project={project} onClose={() => setshowEdit(false)} />
+            )}
+        </>
 
-          {project.dueDate && (
-            <div className="detail-field">
-              <p className="field-label">Due Date</p>
-              <p className={isOverdue ? 'overdue' : ''}>
-                {isOverdue && '⚠ Overdue · '}
-                {new Date(project.dueDate).toLocaleDateString()}
-              </p>
-            </div>
-          )}
-
-          {project.createdAt && (
-            <div className="detail-field">
-              <p className="field-label">Created</p>
-              <p>{new Date(project.createdAt).toLocaleDateString()}</p>
-            </div>
-          )}
-
-          <div className="detail-actions">
-            <button className="btn-main" onClick={() => setShowEdit(true)}>Edit</button>
-            <button className="btn-danger" onClick={handleDelete}>Delete</button>
-          </div>
-        </div>
-      </div>
-
-      {showEdit && (
-        <ProjectForm project={project} onClose={() => setShowEdit(false)} />
-      )}
-    </>
-  )
+    )
 }
 
 export default ProjectDetail

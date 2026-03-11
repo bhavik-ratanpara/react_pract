@@ -26,40 +26,34 @@ const inputs = [
     required: true,
   },
 ]
-
 function Login() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { isLoggedIn, error } = useSelector(s => s.auth)
 
-  // Use a simple state object for values
   const [values, setValues] = useState({
     email: '',
     password: '',
   })
-
   useEffect(() => {
     if (isLoggedIn) navigate('/dashboard')
-  }, [isLoggedIn])
+  }, [isLoggedIn, navigate])
 
   useEffect(() => {
     dispatch(clearError())
   }, [values.email, values.password])
-
   const onChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
-
   const handleSubmit = e => {
     e.preventDefault()
     if (e.target.checkValidity()) {
       dispatch(loginUser({ email: values.email, password: values.password }))
     }
   }
-
   return (
     <div className="auth-page">
-      <div className="auth-box">
+      <div className="auth-boxx">
         <h2>Login</h2>
         {error && <p className="error-msg">{error}</p>}
         <form onSubmit={handleSubmit} noValidate>
@@ -68,8 +62,7 @@ function Login() {
               key={input.id}
               {...input}
               value={values[input.name]}
-              onChange={onChange}
-            />
+              onChange={onChange}/>
           ))}
           <button type="submit" className="btn-main">Login</button>
         </form>
@@ -78,5 +71,4 @@ function Login() {
     </div>
   )
 }
-
 export default Login
