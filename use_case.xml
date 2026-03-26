@@ -1,0 +1,262 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Use Case Diagram" id="uc1">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title" value="Use Case Diagram — Cooking Lab" style="text;html=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="10" width="450" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== SYSTEM BOUNDARY ===== -->
+        <mxCell id="sys" value="&lt;font style=&quot;font-size:16px;&quot;&gt;&lt;b&gt;Cooking Lab Application&lt;/b&gt;&lt;/font&gt;" style="shape=mxgraph.sysml.package;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;verticalAlign=top;spacingTop=5;align=center;overflow=fill;labelPosition=center;verticalLabelPosition=top;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="50" width="1050" height="1100" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== ACTORS ===== -->
+
+        <!-- Guest User (Left) -->
+        <mxCell id="A1" value="Guest User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="110" y="250" width="50" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Registered User (Left) -->
+        <mxCell id="A2" value="Registered User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="110" y="700" width="50" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Google Gemini AI (Right) -->
+        <mxCell id="A3" value="Google Gemini AI" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="200" width="50" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- YouTube API (Right) -->
+        <mxCell id="A4" value="YouTube API" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="420" width="50" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Firebase (Right) -->
+        <mxCell id="A5" value="Firebase" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="700" width="50" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== USE CASES — AUTHENTICATION ===== -->
+
+        <mxCell id="UC1" value="Sign Up&#xa;(Email / Password)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC2" value="Login&#xa;(Email / Password)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="170" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC3" value="Google Sign In" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="260" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC4" value="Link Account" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="660" y="260" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC5" value="View Explore Page" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="350" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC6" value="View Recipe Detail" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="440" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== USE CASES — RECIPE GENERATION ===== -->
+
+        <mxCell id="UC7" value="Fill Recipe Form" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="550" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC8" value="Generate Recipe&#xa;with AI" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="550" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC9" value="Fetch YouTube&#xa;Cooking Videos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="420" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== USE CASES — RECIPE MANAGEMENT ===== -->
+
+        <mxCell id="UC10" value="Save Recipe" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="650" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC11" value="View My Recipes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="740" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC12" value="Mark as Favourite" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="650" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC13" value="Delete Recipe" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="740" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC14" value="Search Recipes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="830" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC15" value="Filter Recipes&#xa;(Diet / Language)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="830" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== USE CASES — COMMUNITY ===== -->
+
+        <mxCell id="UC16" value="Share Recipe&#xa;to Community" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="930" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC17" value="Like Recipe" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="930" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC18" value="Save Recipe&#xa;from Explore" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1030" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC19" value="Share Recipe Link" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1030" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC20" value="Logout" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="160" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== USE CASES — FIREBASE STORAGE ===== -->
+
+        <mxCell id="UC21" value="Store / Retrieve&#xa;User Data" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="680" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC22" value="Authenticate User" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="780" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC23" value="Store / Retrieve&#xa;Public Recipes" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="880" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== GUEST USER CONNECTIONS ===== -->
+
+        <mxCell id="L1" style="html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=none;" edge="1" parent="1" source="A1" target="UC1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L2" style="html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=none;" edge="1" parent="1" source="A1" target="UC2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L3" style="html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=none;" edge="1" parent="1" source="A1" target="UC3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L4" style="html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=none;" edge="1" parent="1" source="A1" target="UC5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L5" style="html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=none;" edge="1" parent="1" source="A1" target="UC6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== REGISTERED USER CONNECTIONS ===== -->
+
+        <mxCell id="L10" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L11" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L12" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L13" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L14" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L15" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L16" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L17" style="html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="A2" target="UC16">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L18" style="html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="A2" target="UC17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L19" style="html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="A2" target="UC18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L20" style="html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=none;" edge="1" parent="1" source="A2" target="UC19">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L21" style="html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=none;" edge="1" parent="1" source="A2" target="UC20">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== INCLUDE RELATIONSHIPS ===== -->
+
+        
+        <mxCell id="I1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;strokeWidth=1.5;dashed=1;strokeColor=#d6b656;endArrow=open;endFill=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="UC7" target="UC8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        
+        <mxCell id="I2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;strokeWidth=1.5;dashed=1;strokeColor=#b85450;endArrow=open;endFill=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="UC8" target="UC9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+       
+        <mxCell id="I3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;strokeWidth=1.5;dashed=1;strokeColor=#6c8ebf;endArrow=open;endFill=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="UC4" target="UC3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== EXTERNAL SYSTEM CONNECTIONS ===== -->
+
+   
+        <mxCell id="L30" style="html=1;strokeWidth=1.5;strokeColor=#d6b656;endArrow=none;" edge="1" parent="1" source="A3" target="UC8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- YouTube API -->
+        <mxCell id="L31" style="html=1;strokeWidth=1.5;strokeColor=#b85450;endArrow=none;" edge="1" parent="1" source="A4" target="UC9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Firebase connections -->
+        <mxCell id="L32" style="html=1;strokeWidth=1.5;strokeColor=#d79b00;endArrow=none;" edge="1" parent="1" source="A5" target="UC21">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L33" style="html=1;strokeWidth=1.5;strokeColor=#d79b00;endArrow=none;" edge="1" parent="1" source="A5" target="UC22">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="L34" style="html=1;strokeWidth=1.5;strokeColor=#d79b00;endArrow=none;" edge="1" parent="1" source="A5" target="UC23">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      
+        <mxCell id="I4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;strokeWidth=1.5;dashed=1;strokeColor=#d79b00;endArrow=open;endFill=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="UC10" target="UC21">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+        <mxCell id="I5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;strokeWidth=1.5;dashed=1;strokeColor=#d79b00;endArrow=open;endFill=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="UC2" target="UC22">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+        <mxCell id="I6" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;strokeWidth=1.5;dashed=1;strokeColor=#d79b00;endArrow=open;endFill=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="UC16" target="UC23">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
