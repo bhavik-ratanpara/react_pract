@@ -1,0 +1,570 @@
+# Cooking Lab — Complete Project Summary
+
+## Project Overview
+
+**Cooking Lab** is an AI-powered recipe generation web application built as an 8th semester Computer Engineering project by **Bhavik Ratanpara**. The app allows users to generate accurate recipes with exact quantities, save them, share with community, and explore recipes shared by others — all powered by Google Gemini AI.
+
+**Live URL:** https://recipe-craftor.vercel.app
+**GitHub:** https://github.com/bhavik-ratanpara/8th-sem
+**Developer LinkedIn:** https://www.linkedin.com/in/bhavik-ratanpara-500011377/
+
+---
+
+## Tech Stack
+
+```
+Frontend:     Next.js 15 (App Router), TypeScript, Tailwind CSS
+UI Library:   Shadcn UI, Lucide React icons
+Animation:    Lottie React (chef animation), Pure CSS animations
+AI:           Google Gemini API (recipe generation)
+Auth:         Firebase Authentication (Email+Password, Google OAuth)
+Database:     Firebase Firestore (NoSQL)
+Hosting:      Vercel (auto deploy from GitHub main branch)
+Font:         Inter (body), Cal Sans (headings), Crustaceans Signature (subtext)
+Theme:        Dark/Light mode with CSS variables
+```
+
+---
+
+## Firebase Configuration
+
+```
+Project ID:   studio-3872024424-a1e04
+Auth Domain:  studio-3872024424-a1e04.firebaseapp.com
+Config:       Hardcoded in src/firebase/config.ts (not env vars)
+```
+
+---
+
+## Environment Variables (Vercel)
+
+```
+GEMINI_API_KEY    — Google Gemini AI key
+YOUTUBE_API_KEY   — YouTube API key (future use)
+```
+
+---
+
+## Project File Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx                    — Home page (hero + recipe form)
+│   ├── explore/
+│   │   ├── page.tsx                — Community explore page
+│   │   └── recipe/[id]/page.tsx   — Explore recipe detail
+│   ├── history/page.tsx            — My Recipes page
+│   ├── recipe/[id]/page.tsx        — User's own recipe detail
+│   ├── about/page.tsx              — About page
+│   ├── privacy/page.tsx            — Privacy Policy page
+│   ├── terms/page.tsx              — Terms of Service page
+│   ├── login/page.tsx              — Login page
+│   ├── signup/page.tsx             — Signup page
+│   └── auth/action/page.tsx        — Firebase auth action handler
+├── components/
+│   ├── header.tsx                  — Navbar component
+│   ├── TypewriterHero.tsx          — Hero section with typewriter
+│   ├── RadarFeatures.tsx           — Chef Lottie animation + rotating ring
+│   ├── FoodDecorations.tsx         — Floating food images + SVG curved lines
+│   ├── FooterAccordion.tsx         — Mobile accordion footer
+│   ├── FooterAccountLinks.tsx      — Auth-based footer account links
+│   └── protected-route.tsx         — Auth guard wrapper
+├── firebase/
+│   ├── config.ts                   — Firebase configuration
+│   ├── provider.tsx                — FirebaseProvider context
+│   ├── client-provider.tsx         — FirebaseClientProvider
+│   └── index.ts                    — initializeFirebase, exports hooks
+├── lib/
+│   └── save-recipe.ts              — All Firestore CRUD functions
+└── app/globals.css                 — Global styles, animations, themes
+```
+
+---
+
+## Firestore Database Structure
+
+```
+users/
+  {userId}/
+    savedRecipes/
+      {recipeId}/
+        recipeName: string
+        cuisine: string
+        servings: number
+        dietType: "veg" | "non-veg"
+        language: string
+        ingredients: array
+        steps: array
+        generatedAt: timestamp
+        isFavourite: boolean
+        isPublic: boolean
+        savedFromExplore: boolean
+        originalSharedBy: string
+        originalSharedByName: string
+        originalRecipeId: string
+        likes: number
+        likedBy: array
+
+publicRecipes/
+  {recipeId}/
+    (same fields as savedRecipes)
+    sharedBy: string (userId)
+    sharedByName: string
+    sharedAt: timestamp
+    likes: number
+    likedBy: array (userIds)
+```
+
+---
+
+## Firestore Rules
+
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null 
+        && request.auth.uid == userId;
+    }
+    match /publicRecipes/{recipeId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null;
+      allow delete: if request.auth != null
+        && resource.data.sharedBy == request.auth.uid;
+    }
+  }
+}
+```
+
+---
+
+## Authentication Flow
+
+```
+Methods supported:
+1. Email + Password
+2. Google Sign In (signInWithPopup)
+
+Firebase Console setting:
+"Link accounts that use same email" — ON
+
+Email verification: NOT implemented (removed)
+Password reset: NOT implemented (removed)
+
+Account conflict handling:
+If email+pass user tries Google login
+→ Error: auth/account-exists-with-different-credential
+→ User prompted for password
+→ Accounts linked via linkWithCredential
+→ Both methods work after linking
+
+Warning shown on login page:
+"If registered with email+pass, use that to login"
+"Switching to Google changes your login method"
+```
+
+---
+
+## UI/UX Design
+
+### Theme
+```
+Dark mode background:  #0a0a0a
+Light mode background: #F5F0EB (warm creamy off-white)
+Primary accent:        #2563eb (blue)
+Font:                  Inter
+```
+
+### Navbar
+```
+Layout:    Logo left | Nav center | Actions right
+Nav links: Home / Explore / My Recipes / About
+Style:     Plain text links, magic line sliding indicator
+           Line slides smoothly between active pages
+           No pill buttons — clean text only
+Mobile:    Hidden nav links, only logo + icons
+Desktop:   Full navbar with search bar
+Search:    Placeholder "Search recipes..."
+```
+
+### Hero Section (TypewriterHero.tsx)
+```
+Left side:
+  Heading: "Cook Smarter,"
+  Typewriter cycles: "Not Harder." / "Eat Better." /
+                     "Save Time." / "Impress Everyone." /
+                     "Like a Chef."
+  Subtext: "Get accurate recipes, exact quantities,
+            and step-by-step guidance — powered by AI."
+  Buttons: "Generate a Recipe" (blue) | "See How It Works" (outline)
+
+Right side:
+  Chef Lottie animation (chef-making-pizza.json in /public)
+  Single rotating dashed ring with blue dots around chef
+  Circular crop with radial gradient fade edges
+  mix-blend-mode: multiply (light) / screen (dark)
+  
+Background:
+  FoodDecorations component — floating food images
+  SVG curved lines on both sides
+  Food images: pizza, burger, sandwich, sushi, lemon, chilli, sub
+  Lines animate on scroll (stroke-dasharray animation)
+  Food slides in from sides after lines draw
+  Hidden on mobile completely
+```
+
+### Recipe Form
+```
+Fields:
+  Recipe Name (placeholder: "e.g. Pasta Carbonara")
+  Number of Servings (min:1 max:100)
+  Cuisine/Region (placeholder: "e.g. Italian, Indian")
+  Language (dropdown — English default)
+  Diet Type: Veg (green dot) | Non-Veg (red triangle)
+             Entire card clickable via label tag
+
+Generate button → calls Gemini API → shows recipe below
+```
+
+### Recipe Display
+```
+After generation:
+  Recipe title, cuisine, servings shown
+  Ingredients list with exact quantities
+  Step by step instructions
+  Save button (saves to Firestore)
+  Share button
+
+localStorage persistence:
+  Recipe saved to localStorage after generation
+  When user returns — recipe restored automatically
+  Banner shows: "Your last generated recipe"
+  Buttons: "Generate New" | "Clear ×"
+```
+
+### My Recipes Page (history/page.tsx)
+```
+Shows all user's saved recipes
+Filters: All | Veg | Non-Veg | Favourites
+Search: by recipe name
+Recipe cards: flat design, cuisine · servings · diet tags
+              Heart icon for favourites
+              Delete icon bottom right
+              Share icon top right
+Pagination: 12 cards per page with page numbers
+            Prev/Next buttons + page numbers
+            Scroll to top on page change
+```
+
+### Explore Page (explore/page.tsx)
+```
+Shows all publicly shared recipes from community
+
+Desktop filters:
+  [All][Veg][Non-Veg] | [Shared by Me][Most Liked][🌐 Language ▾]
+  Compact small buttons
+  Language dropdown — dynamic from available languages
+
+Mobile filters:
+  [All][Veg][Non-Veg][Filters ≡]
+  "Filters" button opens bottom sheet
+  Bottom sheet: Sort by / Shared by Me / Language
+  Apply + Reset All buttons
+
+Load More:
+  Shows 12 cards initially
+  "Load More — X more" button
+  Resets to 12 on filter change
+  "Showing X of Y recipes" text
+
+Like system:
+  Heart icon with count on each card
+  Toggle like/unlike — optimistic UI update
+  Red filled heart when liked
+  Any logged in user can like any recipe
+  Sort by Most Liked option
+
+Save from Explore:
+  "Save" button on each card
+  "Saved ✓" green button if already saved
+  Duplicate prevention via originalRecipeId check
+  savedFromExplore: true flag set
+
+Language filter:
+  Dynamic — fetches unique languages from recipes
+  Dropdown with all available languages
+  Prevents bad UX from non-English recipes
+```
+
+### About Page
+```
+7 sections:
+1. Hero — "Cooking made intelligent."
+2. Before/After comparison cards
+3. How it works — 3 steps
+4. Features — 6 feature cards
+5. Tech stack — pill badges
+6. Creator — Bhavik Ratanpara with GitHub+LinkedIn
+7. CTA — Generate + Explore buttons
+```
+
+### Footer
+```
+Desktop: 4 columns
+  Brand | Navigate | Account | Legal
+
+Mobile: Accordion style
+  Brand always visible
+  Navigate / Account / Legal — tap to expand
+  GitHub + LinkedIn buttons in brand section
+
+Account section (auth-based):
+  Logged out: Login + Sign Up links
+  Logged in: My Recipes + Favourites links
+
+Legal links: /privacy and /terms (real pages)
+Bottom bar: © 2026 Cooking Lab · Bhavik Ratanpara
+            8th Semester Project · Computer Engineering
+```
+
+---
+
+## Core Features
+
+### 1. AI Recipe Generation
+```
+User fills form → Gemini API called →
+Complete recipe generated with:
+  - Exact ingredient quantities
+  - Step by step instructions
+  - Scaled to user's servings
+  - In user's chosen language
+  - Veg/Non-veg specific
+```
+
+### 2. Save Recipes
+```
+Generated recipe → Save button →
+Stored in Firestore under users/{uid}/savedRecipes
+Accessible from My Recipes page
+```
+
+### 3. Favourites
+```
+Heart icon on recipe cards →
+isFavourite: true in Firestore
+Filter by favourites in My Recipes
+```
+
+### 4. Share to Explore (Public)
+```
+My Recipes card → Share button →
+If not public: modal asks to publish first
+Recipe copied to publicRecipes collection
+isPublic: true set on savedRecipe
+sharedBy, sharedByName, sharedAt saved
+```
+
+### 5. Save from Explore
+```
+Explore card → Save button →
+Checks if already saved (duplicate prevention)
+Saved to user's collection with:
+  savedFromExplore: true
+  originalRecipeId: (public recipe ID)
+  originalSharedBy, originalSharedByName
+```
+
+### 6. Like System
+```
+Heart button on Explore cards
+Toggle like/unlike with optimistic UI
+likes counter + likedBy array in Firestore
+Any logged in user can like any recipe
+Sort by Most Liked available
+```
+
+### 7. Share Link
+```
+Share2 icon on all recipe cards
+Mobile: native share sheet (navigator.share)
+Desktop: copy link to clipboard + "Link Copied!" toast
+
+Logic:
+  savedFromExplore → share /explore/recipe/{originalRecipeId}
+  Own recipe + isPublic → share /explore/recipe/{id}
+  Own recipe + not public → modal to publish first
+```
+
+### 8. Search
+```
+Search bar in navbar
+Search within My Recipes page
+Search within Explore page
+Filters by recipe name
+```
+
+### 9. Language Filter (Explore)
+```
+Dynamic language detection from recipes
+Dropdown with available languages
+Prevents users from seeing recipes
+they can't understand
+```
+
+### 10. Recipe Persistence (localStorage)
+```
+Recipe saved to localStorage after generation
+Form values also saved
+On return to home — recipe restored
+Banner shown with Generate New / Clear options
+```
+
+### 11. Pagination
+```
+Explore: Load More button (12 per load)
+My Recipes: Page numbers (12 per page)
+Resets on filter change
+Scroll to top on page change
+```
+
+---
+
+## Problems Solved
+
+```
+1. Recipe quantity scaling
+   → AI generates exact quantities for any servings
+
+2. Multi-language recipes
+   → Generate in any language user chooses
+
+3. Recipe discovery
+   → Community Explore page with filters
+
+4. Duplicate saves from Explore
+   → originalRecipeId check prevents duplicates
+
+5. Recipe persistence across navigation
+   → localStorage saves last generated recipe
+
+6. Non-English recipes in Explore
+   → Language filter allows users to filter by language
+
+7. Like spam/multiple likes
+   → likedBy array prevents duplicate likes
+
+8. Auth account conversion
+   → Warning text + linkWithCredential merge logic
+
+9. Mobile viewport zoom issue
+   → Viewport meta tag + overflow:hidden fixes
+
+10. Explore page performance
+    → Pagination with Load More (12 cards at a time)
+```
+
+---
+
+## Deployment & Git
+
+```
+Platform:     Vercel
+Auto deploy:  On every push to GitHub main branch
+Build command: npm run build
+Git repo:     github.com/bhavik-ratanpara/8th-sem
+Branch:       main
+
+Common Git commands used:
+git add .
+git commit -m "message"
+git push origin main
+
+Conflict fix:
+git config pull.rebase false
+git pull origin main --allow-unrelated-histories
+git push origin main
+```
+
+---
+
+## Public Folder Assets
+
+```
+/public/
+  chef-making-pizza.json  — Lottie chef animation
+  pizza.png               — Floating food image
+  burger.png              — Floating food image
+  sandwich.png            — Floating food image
+  sushi.png               — Floating food image
+  lemon.png               — Floating food image
+  chilli.png              — Floating food image
+  sub.png                 — Floating food image
+```
+
+---
+
+## Known Limitations / Future Scope
+
+```
+Not implemented:
+  ❌ Email verification
+  ❌ Password reset
+  ❌ Food images with recipes
+  ❌ Cooking timer
+  ❌ Smart shopping list
+  ❌ Nutritional information
+  ❌ Video tutorials
+
+Future features discussed:
+  → Food image via Unsplash/Spoonacular API
+  → Leftover Chef feature
+  → Emergency Cook Mode
+  → Recipe Rescue
+  → Family Recipe Vault
+  → Cooking Cost Calculator
+  → Cook Streak/Achievements
+  → Smart Shopping List with prices
+```
+
+---
+
+## Key Design Decisions
+
+```
+1. Lottie animation instead of static image
+   → Lighter than video, more engaging than image
+
+2. Floating food images (Zomato style)
+   → Scroll triggered — slides in from sides
+   → SVG curved lines behind images
+   → Hidden on mobile completely
+
+3. Magic line navbar
+   → Smooth sliding underline between nav items
+   → No pill buttons — clean text only
+
+4. Warm cream background (#F5F0EB) for light mode
+   → More premium than pure white
+   → Food-appropriate warmth
+
+5. Optimistic UI for likes
+   → Count updates instantly
+   → Server syncs in background
+   → Reverts if server fails
+
+6. Community Explore public recipes
+   → Anyone can view without login
+   → Must login to save/like/share
+
+7. No manual recipe database
+   → Only AI generated recipes
+   → Keeps app focused on AI value
+```
+
+---
+
+**Copy this entire summary and paste it at the start of any new chat with me. I will understand your complete project instantly and can help you with report writing, new features, bug fixes, or anything else!** 🙙
