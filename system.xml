@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram id="arch" name="System Architecture - Cooking Lab">
+    <mxGraphModel dx="2194" dy="1155" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;arcSize=25;" value="&lt;b&gt;User&lt;/b&gt;&lt;br&gt;(Web Browser — Desktop / Mobile)" vertex="1">
+          <mxGeometry height="65" width="250" x="380" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#333333;fontSize=12;arcSize=12;" value="&lt;b&gt;Next.js 15 Application&lt;/b&gt;&lt;br&gt;TypeScript · Tailwind CSS · Shadcn UI · Lottie" vertex="1">
+          <mxGeometry height="80" width="330" x="340" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;arcSize=20;" value="&lt;b&gt;Google Gemini API&lt;/b&gt;&lt;br&gt;AI Recipe Generation" vertex="1">
+          <mxGeometry height="65" width="240" x="20" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;arcSize=20;" value="&lt;b&gt;YouTube Data API&lt;/b&gt;&lt;br&gt;Cooking Video Search" vertex="1">
+          <mxGeometry height="65" width="240" x="385" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;arcSize=20;" value="&lt;b&gt;Firebase Authentication&lt;/b&gt;&lt;br&gt;Email/Password + Google OAuth" vertex="1">
+          <mxGeometry height="65" width="250" x="740" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;size=10;" value="&lt;b&gt;Firebase Firestore&lt;/b&gt;&lt;br&gt;NoSQL Cloud Database" vertex="1">
+          <mxGeometry height="85" width="230" x="365" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;arcSize=20;" value="&lt;b&gt;localStorage&lt;/b&gt;&lt;br&gt;Client-side Recipe Cache" vertex="1">
+          <mxGeometry height="60" width="210" x="780" y="397.5" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=15;" value="&lt;b&gt;users/&lt;/b&gt;{uid}&lt;b&gt;/savedRecipes/&lt;/b&gt;{id}&lt;br&gt;Personal Recipe Collection" vertex="1">
+          <mxGeometry height="55" width="250" x="200" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=15;" value="&lt;b&gt;publicRecipes/&lt;/b&gt;{id}&lt;br&gt;Community Shared Recipes" vertex="1">
+          <mxGeometry height="55" width="250" x="510" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" source="3" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20L" connectable="0" parent="20" style="edgeLabel;html=1;align=center;verticalAlign=middle;fillColor=#ffffff;" value="&lt;font style=&quot;font-size:10px;&quot;&gt;HTTP Request / Response&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="5" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=2;exitX=0;exitY=0.75;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21L" connectable="0" parent="21" style="edgeLabel;html=1;align=center;verticalAlign=middle;fillColor=#ffffff;" value="&lt;font style=&quot;font-size:10px;&quot;&gt;Generate Recipe&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="5" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22L" connectable="0" parent="22" style="edgeLabel;html=1;align=center;verticalAlign=middle;fillColor=#ffffff;" value="&lt;font style=&quot;font-size:10px;&quot;&gt;Fetch Cooking Videos&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="5" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.75;entryX=0.061;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23L" connectable="0" parent="23" style="edgeLabel;html=1;align=center;verticalAlign=middle;fillColor=#ffffff;" value="&lt;font style=&quot;font-size:10px;&quot;&gt;Login / Signup&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="5" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;exitX=0.15;exitY=1;entryX=0.5;entryY=0;" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24L" connectable="0" parent="24" style="edgeLabel;html=1;align=center;verticalAlign=middle;fillColor=#ffffff;" value="&lt;font style=&quot;font-size:10px;&quot;&gt;Read / Write Data&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="5" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;strokeWidth=2;exitX=1;exitY=0.25;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25L" connectable="0" parent="25" style="edgeLabel;html=1;align=center;verticalAlign=middle;fillColor=#ffffff;" value="&lt;font style=&quot;font-size:10px;&quot;&gt;Cache Recipe Locally&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="9" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=1.5;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" source="9" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=1.5;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,274 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="Sequence Diagram" id="seq1">
+    <mxGraphModel dx="5274" dy="2146" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;strokeWidth=2;" value="&lt;b&gt;User&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="45" x="50" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2" parent="1" style="verticalAlign=top;align=center;overflow=fill;fontSize=13;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Browser / UI&lt;/b&gt;&lt;br&gt;(Next.js Frontend)&lt;/p&gt;" vertex="1">
+          <mxGeometry height="55" width="170" x="160" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="O3" parent="1" style="verticalAlign=top;align=center;overflow=fill;fontSize=13;html=1;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Firebase&lt;/b&gt;&lt;br&gt;Authentication&lt;/p&gt;" vertex="1">
+          <mxGeometry height="55" width="170" x="400" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="O4" parent="1" style="verticalAlign=top;align=center;overflow=fill;fontSize=13;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Google&lt;/b&gt;&lt;br&gt;Gemini AI&lt;/p&gt;" vertex="1">
+          <mxGeometry height="55" width="170" x="630" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="O5" parent="1" style="verticalAlign=top;align=center;overflow=fill;fontSize=13;html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;YouTube&lt;/b&gt;&lt;br&gt;Data API&lt;/p&gt;" vertex="1">
+          <mxGeometry height="55" width="170" x="630" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="O6" parent="1" style="verticalAlign=top;align=center;overflow=fill;fontSize=13;html=1;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Firebase&lt;/b&gt;&lt;br&gt;Firestore DB&lt;/p&gt;" vertex="1">
+          <mxGeometry height="55" width="170" x="860" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="O7" parent="1" style="verticalAlign=top;align=center;overflow=fill;fontSize=13;html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;localStorage&lt;/b&gt;&lt;br&gt;(Browser)&lt;/p&gt;" vertex="1">
+          <mxGeometry height="55" width="160" x="1080" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="LL1" parent="1" style="html=1;strokeColor=#6c8ebf;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="1950" width="1" x="72" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="LL2" parent="1" style="html=1;strokeColor=#82b366;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="1980" width="1" x="244" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LL3" parent="1" style="html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="1980" width="1" x="484" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LL4" parent="1" style="html=1;strokeColor=#d6b656;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="700" width="1" x="714" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LL5" parent="1" style="html=1;strokeColor=#b85450;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="350" width="1" x="714" y="1570" as="geometry" />
+        </mxCell>
+        <mxCell id="LL6" parent="1" style="html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="1980" width="1" x="944" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LL7" parent="1" style="html=1;strokeColor=#9673a6;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="1980" width="1" x="1159" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="S1" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;rounded=1;spacingLeft=10;spacingRight=10;" value="AUTHENTICATION FLOW" vertex="1">
+          <mxGeometry height="30" width="250" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="M1" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="1. Opens Login Page">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="230" as="sourcePoint" />
+            <mxPoint x="244" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="2. Display Login Form">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="275" as="sourcePoint" />
+            <mxPoint x="73" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M3" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="3. Enter Email &amp; Password">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="320" as="sourcePoint" />
+            <mxPoint x="244" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M4" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="4. signInWithEmailAndPassword( )">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="370" as="sourcePoint" />
+            <mxPoint x="484" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M5" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#d79b00;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="5. Return Auth Token + User Data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="484" y="420" as="sourcePoint" />
+            <mxPoint x="244" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M6" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="6. Redirect to Home Page (Logged In)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="470" as="sourcePoint" />
+            <mxPoint x="73" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEP1" edge="1" parent="1" style="html=1;strokeWidth=1;strokeColor=#cccccc;dashed=1;dashPattern=12 8;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="510" as="sourcePoint" />
+            <mxPoint x="1200" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S2" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;rounded=1;spacingLeft=10;spacingRight=10;" value="RECIPE GENERATION FLOW" vertex="1">
+          <mxGeometry height="30" width="280" x="20" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="M7" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="7. Fill Recipe Form (name, cuisine, servings, diet, language)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="590" as="sourcePoint" />
+            <mxPoint x="244" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M8" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="8. Click &quot;Generate Recipe&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="640" as="sourcePoint" />
+            <mxPoint x="244" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M9" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="9. Send prompt to Gemini API">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="690" as="sourcePoint" />
+            <mxPoint x="714" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M10" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="10. Return generated recipe (ingredients + steps)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="714" y="740" as="sourcePoint" />
+            <mxPoint x="244" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M11" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="11. Cache recipe in localStorage">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="790" as="sourcePoint" />
+            <mxPoint x="1159" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M12" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="12. Display recipe with ingredients &amp; steps">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="840" as="sourcePoint" />
+            <mxPoint x="73" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEP2" edge="1" parent="1" style="html=1;strokeWidth=1;strokeColor=#cccccc;dashed=1;dashPattern=12 8;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="880" as="sourcePoint" />
+            <mxPoint x="1200" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S3" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;rounded=1;spacingLeft=10;spacingRight=10;" value="SAVE RECIPE FLOW" vertex="1">
+          <mxGeometry height="30" width="220" x="20" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="M13" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="13. Click &quot;Save Recipe&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="960" as="sourcePoint" />
+            <mxPoint x="244" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M14" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="14. Save to users/{uid}/savedRecipes/{id}">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1010" as="sourcePoint" />
+            <mxPoint x="944" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M15" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#d79b00;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="15. Return success confirmation">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="1060" as="sourcePoint" />
+            <mxPoint x="244" y="1060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M16" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="16. Show &quot;Recipe Saved!&quot; confirmation">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1110" as="sourcePoint" />
+            <mxPoint x="73" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEP3" edge="1" parent="1" style="html=1;strokeWidth=1;strokeColor=#cccccc;dashed=1;dashPattern=12 8;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="1150" as="sourcePoint" />
+            <mxPoint x="1200" y="1150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S4" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;rounded=1;spacingLeft=10;spacingRight=10;" value="SHARE TO COMMUNITY FLOW" vertex="1">
+          <mxGeometry height="30" width="290" x="20" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="M17" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="17. Click &quot;Share to Community&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="1230" as="sourcePoint" />
+            <mxPoint x="244" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M18" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="18. Copy recipe to publicRecipes/{id}">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1280" as="sourcePoint" />
+            <mxPoint x="944" y="1280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M19" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="19. Update isPublic = true on savedRecipe">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1330" as="sourcePoint" />
+            <mxPoint x="944" y="1330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M20" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#d79b00;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="20. Return success">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="1380" as="sourcePoint" />
+            <mxPoint x="244" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M21" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="21. Show &quot;Recipe Shared!&quot; confirmation">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1430" as="sourcePoint" />
+            <mxPoint x="73" y="1430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEP4" edge="1" parent="1" style="html=1;strokeWidth=1;strokeColor=#cccccc;dashed=1;dashPattern=12 8;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="1470" as="sourcePoint" />
+            <mxPoint x="1200" y="1470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S5" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;rounded=1;spacingLeft=10;spacingRight=10;" value="YOUTUBE VIDEO SEARCH FLOW" vertex="1">
+          <mxGeometry height="30" width="310" x="20" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="M22" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="22. Type search query in Navbar Search Bar">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="1590" as="sourcePoint" />
+            <mxPoint x="244" y="1590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M23" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="23. Search YouTube API (query)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1640" as="sourcePoint" />
+            <mxPoint x="714" y="1640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M24" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#b85450;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="24. Return video results (title, thumbnail, videoId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="714" y="1690" as="sourcePoint" />
+            <mxPoint x="244" y="1690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M25" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="25. Display YouTube video results">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1740" as="sourcePoint" />
+            <mxPoint x="73" y="1740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEP5" edge="1" parent="1" style="html=1;strokeWidth=1;strokeColor=#cccccc;dashed=1;dashPattern=12 8;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="1780" as="sourcePoint" />
+            <mxPoint x="1200" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S6" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;rounded=1;spacingLeft=10;spacingRight=10;" value="LIKE RECIPE FLOW (Explore Page)" vertex="1">
+          <mxGeometry height="30" width="320" x="20" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="M26" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="26. Click Like (Heart) on Explore Recipe">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="73" y="1860" as="sourcePoint" />
+            <mxPoint x="244" y="1860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M27" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#82b366;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="27. Optimistic UI update (heart red, count +1)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1910" as="sourcePoint" />
+            <mxPoint x="73" y="1910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M28" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#333333;endArrow=block;endFill=1;fontSize=13;" value="28. Update likes &amp; likedBy in publicRecipes/{id}">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="244" y="1960" as="sourcePoint" />
+            <mxPoint x="944" y="1960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M29" edge="1" parent="1" style="html=1;strokeWidth=2;strokeColor=#d79b00;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;fontSize=13;" value="29. Return success (sync confirmed)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="2010" as="sourcePoint" />
+            <mxPoint x="244" y="2010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
