@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Food Experience</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 3D Background -->
+    <div id="webgl-container"></div>
+
+    <!-- Scrollable Content -->
+    <main>
+        <section class="hero">
+            <div class="content">
+                <h1>Taste the<br>Future</h1>
+                <p>Scroll down to explore our culinary masterpiece in 3D.</p>
+            </div>
+        </section>
+
+        <section class="section-2">
+            <div class="content">
+                <h2>Exquisite<br>Details</h2>
+                <p>Crafted with precision. Every layer tells a story of flavor.</p>
+            </div>
+        </section>
+
+        <section class="section-3">
+            <div class="content">
+                <h2>Ready to<br>Eat?</h2>
+                <p>Fresh from the oven, rendered in real-time.</p>
+                <a href="#" class="btn">Order Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GLTFLoader for loading .glb files -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Your Logic -->
+    <script src="script.js"></script>
+</body>
+
+</html>
